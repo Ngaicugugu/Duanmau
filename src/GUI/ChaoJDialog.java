@@ -25,7 +25,11 @@ public class ChaoJDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         Timer t = new Timer(10, new ActionListener() {
+=======
+        Timer t = new Timer(20, new ActionListener() {
+>>>>>>> Stashed changes
 =======
         Timer t = new Timer(20, new ActionListener() {
 >>>>>>> Stashed changes
