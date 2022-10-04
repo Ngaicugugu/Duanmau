@@ -1,5 +1,6 @@
 package GUI;
 
+import Utils.XImage;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 
@@ -22,7 +23,7 @@ public class DangNhapJDialog extends javax.swing.JDialog {
     public DangNhapJDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        
+        init();
     }
     
     
@@ -119,7 +120,11 @@ public class DangNhapJDialog extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    public void init(){
+        this.setLocationRelativeTo(null);
+        this.setIconImage(XImage.getAppIcon());
+    }
+    
     private void btnEndActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEndActionPerformed
         
     }//GEN-LAST:event_btnEndActionPerformed

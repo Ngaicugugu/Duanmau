@@ -1,6 +1,7 @@
 package GUI;
 
 
+import Utils.XImage;
 import java.awt.Desktop;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,6 +10,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
+import jdk.javadoc.internal.tool.Start;
+import sun.java2d.pipe.SpanShapeRenderer;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -26,7 +29,7 @@ public class MainFrame extends javax.swing.JFrame {
      */
     public MainFrame() {
         initComponents();
-
+        init();
     }
 
     /**
@@ -327,6 +330,22 @@ public class MainFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void init(){
+        this.setLocationRelativeTo(null);
+        this.setIconImage(XImage.getAppIcon());
+        new ChaoJDialog(this,true).setVisible(true);
+        new DangNhapJDialog(this,true).setVisible(true);
+        
+        Timer t=new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Date now=new Date();
+                SimpleDateFormat fmFormat = new SimpleDateFormat("hh:mm:ss a");
+                lblTime.setText(fmFormat.format(now));
+            }   
+        });
+        t.start();
+    }
     private void mnKetThucActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnKetThucActionPerformed
         System.exit(0);
     }//GEN-LAST:event_mnKetThucActionPerformed
