@@ -24,7 +24,11 @@ public class ChaoJDialog extends javax.swing.JDialog {
     public ChaoJDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+<<<<<<< Updated upstream
         Timer t = new Timer(10, new ActionListener() {
+=======
+        Timer t = new Timer(20, new ActionListener() {
+>>>>>>> Stashed changes
             @Override
             public void actionPerformed(ActionEvent e) {
                 int value = prgBar.getValue();

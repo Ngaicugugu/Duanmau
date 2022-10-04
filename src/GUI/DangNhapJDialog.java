@@ -25,8 +25,42 @@ public class DangNhapJDialog extends javax.swing.JDialog {
         initComponents();
         init();
     }
-    
-    
+//    NhanVienDAO dao = new NhanVienDAO();
+ void init(){
+ setLocationRelativeTo(null);
+ }
+                void login() 
+                {
+                        String user = txtUser.getText();
+                        String matKhau = new String(txtPass.getPassword());
+                        try {
+                        NhanVien nhanVien = dao.findById(user);
+                        if(nhanVien != null){
+                        String matKhau2 = nhanVien.getMatKhau();
+                        if(matKhau.equals(matKhau2)){
+                        ShareHelper.USER = nhanVien;
+                        DialogHelper.alert(this, "Đăng nhập thành công!");
+                        this.dispose();
+                        }
+                        else{
+                        DialogHelper.alert(this, "Sai mật khẩu!");
+                        }
+                        }
+                        else{
+                        DialogHelper.alert(this, "Sai tên đăng nhập!");
+                        }
+                        } 
+                        catch (Exception e) {
+                        DialogHelper.alert(this, "Lỗi truy vấn dữ liệu!");
+                        }
+                }
+                void exit()
+                {
+                if(DialogHelper.confirm(this, "Bạn có muốn thoát khỏi ứng dụng không?")){
+                System.exit(0);
+
+                }
+ }
     
     
 
@@ -126,7 +160,7 @@ public class DangNhapJDialog extends javax.swing.JDialog {
     }
     
     private void btnEndActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEndActionPerformed
-        
+        exit();
     }//GEN-LAST:event_btnEndActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
