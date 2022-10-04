@@ -30,13 +30,6 @@ public class MainFrame extends javax.swing.JFrame {
      */
     public MainFrame() {
         initComponents();
-<<<<<<< Updated upstream
-        init();
-=======
-      
-        init();
-         
->>>>>>> Stashed changes
     }
           void init() {
             setSize(1000, 600);
